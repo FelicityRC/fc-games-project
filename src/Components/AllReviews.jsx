@@ -26,7 +26,7 @@ return (
     {reviews.map((review) => {
         return (
          <li className="AllReviews" key={review.review_id}>
-         <h3>Title: {review.title}</h3>
+         <h3>{review.title}</h3>
          <p>Category: {review.category}</p>
          <img src={review.review_img_url} width="170" height="140" alt={review.title}></img>
          <p>Votes: {review.votes}</p>

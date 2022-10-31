@@ -1,4 +1,4 @@
-const Header = ({reviews, setReviews}) => {
+const Header = () => {
   return (
     <header>
       <h1>GAMES REVIEWS</h1>

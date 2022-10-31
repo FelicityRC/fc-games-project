@@ -11,17 +11,17 @@
 
 .App {
   background-color: lightgrey;
-  /* display: flex; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 header {
-  height: 100px;
-  background-color: lightgrey;
-  text-align: center;
   margin: auto;
 }
 
 h1 {
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 35px;
   letter-spacing: 9px;
   word-spacing: 2px;
@@ -29,15 +29,18 @@ h1 {
   font-size: 80px;
   font-weight: 40;
   margin: auto;
+  text-align: center;
 }
 
 .WelcomePage {
+  flex-wrap: wrap;
   margin: 0 auto 0 auto;
   margin-top: 60px;
   padding: 20px;
   padding-top: 50px;
-  width: 700px;
-  height: 600px;
+  /* width: 700px; */
+  /* height: 600px; */
+  /* WITHOUT WIDTH & HEIGHT, WORKS FOR MOBILE DEVICES, LOOK AT MEDIA QUERIES! */
   border-radius: 40px;
   background-color: grey;
   color: pink;
@@ -48,9 +51,12 @@ h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   align-self: center;
+  background-size: max-content;
 }
 
 .SeeReviews {
+  display: flex;
+  flex-wrap: wrap;
   padding: 10px;
   border: 1px solid white;
   border-radius: 40px;
@@ -62,7 +68,7 @@ h1 {
 
 .AllReviewsContainer {
   display: flex;
-  list-style-type: none;
+    list-style-type: none;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 0 auto 0 auto;
@@ -70,11 +76,13 @@ h1 {
 }
 
 .LoadingMsg {
-  text-align: center;
+
+  font-size: 30px;
 }
 
 .AllReviewsTitle {
-  margin-top: 80px;
+  margin-top: 120px;
+  margin-bottom: 50px;
   text-align: center;
   text-transform: uppercase;
   word-spacing: 5px;
