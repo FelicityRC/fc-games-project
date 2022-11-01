@@ -1,39 +1,42 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { getReviews } from "../api";
-import CategoriesInNav from "./CategoriesInNav";
-import CategoriesNav from "./CategoriesNav";
 import ReviewSection from "./ReviewSection";
+import CategoriesNav from "./CategoriesNav";
+import CategoriesInNav from "./CategoriesInNav";
 
-const AllReviews = ({ slug }) => {
+const ReviewsByCategory = ({ slug }) => {
+  const { category } = useParams();
+
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
-    getReviews().then((reviews) => {
+    getReviews(category).then((reviews) => {
       setReviews(reviews);
       setIsLoading(false);
     });
-  }, []);
+  }, [category]);
 
   if (isLoading)
     return (
-      <h3 className="LoadingMsg">
-        Please wait whilst loading... <div className="Spinner"></div>
-      </h3>
+      <>
+        <h3 className="LoadingMsg">
+          Please wait whilst loading... <div className="Spinner"></div>
+        </h3>
+      </>
     );
   else
     return (
-      <main className="mainAllReviewsPage">
+      <>
+        <h3 className="CategoryTitle">{category}</h3>
         <CategoriesInNav>
           <CategoriesNav slug={slug} />
         </CategoriesInNav>
-
-        <h2 className="AllReviewsTitle">All Reviews</h2>
-
         <ReviewSection reviews={reviews} />
-      </main>
+      </>
     );
 };
 
-export default AllReviews;
+export default ReviewsByCategory;

@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-      <h1>GAMES REVIEWS</h1>
+      <h1 className="Reviewsable">REVIEWSABLE</h1>
     </header>
   );
 };
