@@ -6,17 +6,18 @@ const WelcomePage = () => {
 
 const [error, setError] = useState(null);
 const {home} = useParams();
+const [ setWelcomeMsg ] = useState("");
 
 useEffect(()=>{
   getBaseURL(home).then(()=>{
-    setError(null);
+    setWelcomeMsg("Test");
   }).catch((error)=>{
 setError("404: Page Not Found")
   })
 })
 
   return (
-    <> { error ? <p className="errorMsg">{error}</p> :
+    <> { !!error ? <p className="errorMsg">{error}</p> :
       <main className="WelcomePage">
         Browse game reviews or help others decide which games to play based on
         your feedback!<br></br>
