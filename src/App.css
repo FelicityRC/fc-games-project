@@ -201,6 +201,16 @@ h1 {
   color: grey;
 }
 
+.errorMsg {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+ font-style: italic;
+ letter-spacing: 2px;
+ margin-right: 10px;
+
+}
+
 /* MAKES IMAGES ON REVIEW CARD SPIN 360: */
 /* .ReviewsImages {
   animation: rotation 4s infinite linear;

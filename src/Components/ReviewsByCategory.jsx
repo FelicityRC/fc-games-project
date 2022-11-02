@@ -10,13 +10,19 @@ const ReviewsByCategory = ({ slug }) => {
 
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
-    getReviews(category).then((reviews) => {
-      setReviews(reviews);
-      setIsLoading(false);
-    });
+    getReviews(category)
+      .then((reviews) => {
+        setReviews(reviews);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError("404: Page Not Found");
+        setIsLoading(false);
+      });
   }, [category]);
 
   if (isLoading)
@@ -30,11 +36,18 @@ const ReviewsByCategory = ({ slug }) => {
   else
     return (
       <>
-        <h3 className="CategoryTitle">{category}</h3>
-        <CategoriesInNav>
-          <CategoriesNav slug={slug} />
-        </CategoriesInNav>
-        <ReviewSection reviews={reviews} />
+        {" "}
+        {error ? (
+          <p className="errorMsg">{error}</p>
+        ) : (
+          <section>
+            <h3 className="CategoryTitle">{category}</h3>
+            <CategoriesInNav>
+              <CategoriesNav slug={slug} />
+            </CategoriesInNav>
+            <ReviewSection reviews={reviews} />
+          </section>
+        )}
       </>
     );
 };
