@@ -15,25 +15,22 @@ const AllReviews = ({ slug }) => {
       setIsLoading(false);
     });
   }, []);
-
   if (isLoading)
     return (
       <h3 className="LoadingMsg">
         Please wait whilst loading... <div className="Spinner"></div>
       </h3>
     );
-  else
+  else {
     return (
       <main className="mainAllReviewsPage">
         <CategoriesInNav>
           <CategoriesNav slug={slug} />
         </CategoriesInNav>
-
         <h2 className="AllReviewsTitle">All Reviews</h2>
-
         <ReviewSection reviews={reviews} />
       </main>
     );
+  }
 };
-
 export default AllReviews;

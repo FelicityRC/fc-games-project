@@ -14,6 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<WelcomePage />} />
+          <Route path="/:home" element={<WelcomePage />} />
           <Route path="/reviews" element={<AllReviews />} />
           <Route
             path="/reviews/categories/:category"

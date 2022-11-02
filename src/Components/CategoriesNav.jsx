@@ -11,7 +11,7 @@ const CategoriesNav = () => {
     getCategories().then((categories) => {
       setCategories(categories);
       setIsLoading(false);
-    });
+    })
   }, []);
 
   if (isLoading)

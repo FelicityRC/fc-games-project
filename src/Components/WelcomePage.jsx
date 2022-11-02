@@ -1,8 +1,22 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { getBaseURL } from "../api";
 
 const WelcomePage = () => {
+
+const [error, setError] = useState(null);
+const {home} = useParams();
+
+useEffect(()=>{
+  getBaseURL(home).then(()=>{
+    setError(null);
+  }).catch((error)=>{
+setError("404: Page Not Found")
+  })
+})
+
   return (
-    <>
+    <> { error ? <p className="errorMsg">{error}</p> :
       <main className="WelcomePage">
         Browse game reviews or help others decide which games to play based on
         your feedback!<br></br>
@@ -11,6 +25,7 @@ const WelcomePage = () => {
           See Reviews!
         </Link>
       </main>
+      }
     </>
   );
 };
