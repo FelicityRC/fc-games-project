@@ -5,7 +5,10 @@ const myApi = axios.create({
 });
 
 export const getBaseURL = (home) => {
-  return myApi.get(`/${home}`).then((res) => {
+  let path = "/"
+  if (home) path += home
+  console.log(path, "path")
+  return myApi.get(`${path}`).then((res) => {
     return res.data;
   });
 };
