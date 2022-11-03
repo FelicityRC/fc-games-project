@@ -27,7 +27,7 @@ const CategoriesNav = () => {
       <ul className="CategoriesNav">
         {categories.map((category) => {
           return (
-            <>
+            
             <li key={category.slug}>
               <Link
                 key={category.slug}
@@ -41,7 +41,7 @@ const CategoriesNav = () => {
                 </p>
               </Link>
                 </li>
-            </>
+            
           );
         })}
       </ul>
