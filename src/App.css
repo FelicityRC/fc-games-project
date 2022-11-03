@@ -239,6 +239,7 @@ h1 {
   width: 65px;
   padding: 3px;
   margin: auto;
+  cursor: pointer;
 }
 
 .CategoriesNavButton {
@@ -273,6 +274,7 @@ h1 {
 
 .CategoriesNav {
   display: auto;
+  list-style-type: none;
 }
 
 .CategoriesOpenClosed {
@@ -418,5 +420,19 @@ h1 {
   letter-spacing: 2.5px;
   word-spacing: 2px;
   line-height: 25px;
-  border: 0.5px solid grey;
+  color: darkslategray;
+  background-color: aliceblue;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.BackButton {
+  padding: 10px;
+  margin-left: 20px;
+  width: 100px;
+  border: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  color: darkslategray;
+  border-radius: 10px;
+  cursor: pointer;
 }

@@ -36,13 +36,11 @@ const ReviewsByCategory = ({ slug }) => {
   else
     return (
       <>
-        {" "}
         {error ? (
           <p className="errorMsg">{error}</p>
         ) : (
           <section>
             <h3 className="CategoryTitle">{category}</h3>
-
             <CategoriesInNav>
               <CategoriesNav slug={slug} />
             </CategoriesInNav>

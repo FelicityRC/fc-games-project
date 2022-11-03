@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getReviewById } from "../api";
 
 const IndividualReviewCard = () => {
   const [singleReview, setSingleReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const { review_id } = useParams();
 
@@ -12,6 +13,9 @@ const IndividualReviewCard = () => {
     setIsLoading(true);
     getReviewById(review_id).then((singleReview) => {
       setSingleReview(singleReview);
+      setIsLoading(false);
+    }).catch((error) => {
+      setError("404: Page Not Found");
       setIsLoading(false);
     });
   }, [review_id]);
@@ -27,6 +31,13 @@ const IndividualReviewCard = () => {
   else
     return (
       <>
+        {error ? (
+          <p className="errorMsg">{error}</p>
+        ) : (
+          <>
+            <Link key={review_id} to={"/reviews"}>
+          <button className="BackButton">Back</button>
+          </Link>
         <span className="IndividualReviewAndImage">
           <section className="IndividualReview" style={{ textAlign: "center" }}>
             <h3 style={{ fontSize: "30px" }}>{singleReview.title}</h3>
@@ -53,6 +64,8 @@ const IndividualReviewCard = () => {
             alt={singleReview.title}
           ></img>
         </span>
+        </>
+        )}
       </>
     );
 };

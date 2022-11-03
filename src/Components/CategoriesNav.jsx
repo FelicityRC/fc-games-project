@@ -24,10 +24,11 @@ const CategoriesNav = () => {
     );
   else
     return (
-      <nav className="CategoriesNav">
+      <ul className="CategoriesNav">
         {categories.map((category) => {
           return (
             <>
+            <li key={category.slug}>
               <Link
                 key={category.slug}
                 className="CategoriesNavButton"
@@ -39,10 +40,11 @@ const CategoriesNav = () => {
                   🎲 {category.description}
                 </p>
               </Link>
+                </li>
             </>
           );
         })}
-      </nav>
+      </ul>
     );
 };
 
