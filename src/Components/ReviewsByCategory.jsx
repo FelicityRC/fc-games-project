@@ -36,7 +36,6 @@ const ReviewsByCategory = ({ slug }) => {
   else
     return (
       <>
-        {" "}
         {error ? (
           <p className="errorMsg">{error}</p>
         ) : (

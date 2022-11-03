@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ReviewSection = (props) => {
   const { reviews } = props;
 
@@ -5,8 +7,12 @@ const ReviewSection = (props) => {
     <ul className="AllReviewsContainer">
       {reviews.map((review) => {
         return (
-          <li className="AllReviews" key={review.review_id}>
-            <h3>{review.title}</h3>
+          <li
+            style={{ marginTop: 20 }}
+            className="AllReviews"
+            key={review.review_id}
+          >
+            <h3 style={{ marginTop: 10 }}>{review.title}</h3>
             <p>Category: {review.category}</p>
             <img
               className="ReviewsImages"
@@ -17,6 +23,9 @@ const ReviewSection = (props) => {
             ></img>
             <p>Votes: {review.votes}</p>
             <p>Comments: {review.comment_count}</p>
+            <Link key={review.review_id} to={`/reviews/${review.review_id}`}>
+              <button className="ViewButton">View</button>
+            </Link>
           </li>
         );
       })}

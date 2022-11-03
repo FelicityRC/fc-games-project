@@ -1,10 +1,76 @@
 /* When screen 768px or larger */
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .WelcomePage {
     width: 600px;
     height: 500px;
     background-color: lightgray;
     align-self: center;
+  }
+
+  .CategoriesNav {
+    display: auto;
+  }
+
+  .CategoriesDescription {
+    width: 79.5%;
+  }
+
+  .IndividualReview {
+    width: 700px;
+    float: left;
+    padding: 20px;
+    margin-right: 140px;
+    border-radius: 20px;
+  }
+
+  .IndividualReviewImage {
+    width: 600px;
+    height: 480px;
+    border-radius: 20px;
+  }
+  .IndividualReviewAndImage {
+    display: inline-block;
+    margin-top: 0px;
+    padding: 100px;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+  .App {
+    display: flex;
+  }
+
+  .CategoriesDescription {
+    width: 79%;
+  }
+
+  .CategoriesNav {
+    display: inline;
+    text-align: center;
+    width: 550px;
+    margin-left: 10px;
+  }
+
+  .CategoriesNavButton {
+    text-align: center;
+  }
+
+  .CategoryTitle {
+    margin: 50%;
+    align-self: center;
+  }
+
+  .IndividualReview {
+    padding: 15px;
+    margin: 18px;
+    border-radius: 20px;
+  }
+  .IndividualReviewImage {
+    width: 500px;
+    height: 400px;
+    padding: 18px;
+    border-radius: 40px;
   }
 }
 
@@ -33,11 +99,11 @@
   0% {
     transform: rotate(0deg);
   }
-  33% {
-    transform: rotate(-25deg);
+  55% {
+    transform: rotate(-15deg);
   }
-  66% {
-    transform: rotate(25deg);
+  70% {
+    transform: rotate(15deg);
   }
   100% {
     transform: rotate(0deg);
@@ -59,7 +125,6 @@ body {
 
 .App {
   background-color: lightgrey;
-  display: flex;
   flex-wrap: wrap;
 }
 
@@ -70,17 +135,32 @@ h1 {
 .Reviewsable {
   padding-top: 60px;
   letter-spacing: 9px;
-  word-spacing: 2px;
+  word-spacing: 3px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 68px;
   font-weight: 100;
-  animation: rotate 7s infinite ease-in-out;
+  animation: rotate 6s infinite ease-in-out;
+  padding-left: 10px;
+  margin: 0px;
+  padding-bottom: 0px;
+}
+
+.Pen {
+  animation: rotate 4s infinite ease-in-out;
+  padding: 0px;
+  margin: 0px;
+}
+
+.Dice {
+  animation: rotate 3s infinite ease;
+  padding: 0px;
+  margin: 0px;
 }
 
 .WelcomePage {
   margin: 0 auto 0 auto;
-  margin-top: 60px;
-  padding: 40px;
+  padding: 20px;
+  padding-bottom: 0px;
   border-radius: 40px;
   background-color: floralwhite;
   color: black;
@@ -95,6 +175,7 @@ h1 {
 .SeeReviews {
   display: flex;
   padding: 10px;
+  margin: 5px;
   border: 2px solid darkslategrey;
   border-radius: 40px;
   font-style: italic;
@@ -105,11 +186,11 @@ h1 {
 }
 
 .LoadingMsg {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 10px;
   margin: 10px;
   font-size: 30px;
   letter-spacing: 4px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .AllReviewsTitle {
@@ -149,11 +230,22 @@ h1 {
   width: 70%;
 }
 
+.ViewButton {
+  background-color: white;
+  color: darkslategray;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 65px;
+  padding: 3px;
+  margin: auto;
+  cursor: pointer;
+}
+
 .CategoriesNavButton {
   display: flex;
   flex-wrap: wrap;
-  line-height: 50px;
-  letter-spacing: 5px;
+  letter-spacing: 15px;
   text-decoration: none;
   margin: 5px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -161,25 +253,44 @@ h1 {
   color: darkslategrey;
   text-transform: uppercase;
   background-color: whitesmoke;
-  width: 400px;
-  border-radius: 20px;
-  padding: 5px;
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.CategoriesDescription {
+  background-color: grey;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 20px;
+  font-weight: 100;
+  width: 100%;
+  cursor: auto;
 }
 
 .CategoriesNav {
-  width: 500px;
+  display: auto;
+  list-style-type: none;
 }
 
 .CategoriesOpenClosed {
+  display: auto;
   background-color: lightpink;
-  border-radius: 20px;
+  border-radius: 10px;
   letter-spacing: 3px;
   border: none;
   padding: 15px;
   margin: 5px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 30px;
-  width: 410px;
+  font-size: 35px;
+  width: 500px;
+  cursor: grab;
+  text-align: left;
+  margin: 0px;
 }
 
 .CloseButtonInList {
@@ -190,25 +301,24 @@ h1 {
 .CategoryTitle {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 100;
-  margin-top: 60px;
-  margin-bottom: 50px;
   text-align: center;
   text-transform: uppercase;
   word-spacing: 5px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-style: italic;
-  font-size: 45px;
-  color: grey;
+  font-size: 48px;
+  color: darkslategray;
+  text-shadow: 50px;
+  margin: 0px;
 }
 
 .errorMsg {
   text-align: center;
   font-size: 50px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
- font-style: italic;
- letter-spacing: 2px;
- margin-right: 10px;
-
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-right: 10px;
 }
 
 /* MAKES IMAGES ON REVIEW CARD SPIN 360: */
@@ -302,4 +412,27 @@ h1 {
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
+}
+
+.IndividualReview {
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 2.5px;
+  word-spacing: 2px;
+  line-height: 25px;
+  color: darkslategray;
+  background-color: aliceblue;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.BackButton {
+  padding: 10px;
+  margin-left: 20px;
+  width: 100px;
+  border: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  color: darkslategray;
+  border-radius: 10px;
+  cursor: pointer;
 }

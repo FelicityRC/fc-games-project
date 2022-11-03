@@ -7,6 +7,7 @@ import WelcomePage from "./Components/WelcomePage";
 import WelcomePage2 from "./Components/WelcomePage2";
 import AllReviews from "./Components/AllReviews";
 import ReviewsByCategory from "./Components/ReviewsByCategory";
+import IndividualReviewCard from "./Components/IndividualReviewCard";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Route
             path="/reviews/categories/:category"
             element={<ReviewsByCategory />}
+          />
+          <Route
+            path="/reviews/:review_id"
+            element={<IndividualReviewCard />}
           />
         </Routes>
       </div>

@@ -7,18 +7,25 @@ const CategoriesInNav = (props) => {
   const handleClick = () => {
     setIsClosed((currentIsClosed) => !currentIsClosed);
   };
+
   if (isClosed) {
-    return <button className="CategoriesOpenClosed" onClick={handleClick}>CATEGORIES</button>;
+    return (
+      <button className="CategoriesOpenClosed" onClick={handleClick}>
+        {" "}
+        ➕ CATEGORIES
+      </button>
+    );
   } else {
     return (
-      <>
-        <ul>
-          <li className="CloseButtonInList">
-            <button className="CategoriesOpenClosed"  onClick={handleClick}>CATEGORIES</button>
-          </li>
-          {children}
-        </ul>
-      </>
+      <ul>
+        <li className="CloseButtonInList">
+          <button className="CategoriesOpenClosed" onClick={handleClick}>
+            {" "}
+            ➖ CATEGORIES
+          </button>
+        </li>
+        {children}
+      </ul>
     );
   }
 };
