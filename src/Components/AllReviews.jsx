@@ -4,7 +4,7 @@ import CategoriesInNav from "./CategoriesInNav";
 import CategoriesNav from "./CategoriesNav";
 import ReviewSection from "./ReviewSection";
 
-const AllReviews = ({ slug }) => {
+const AllReviews = ({ slug, description }) => {
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,7 +25,7 @@ const AllReviews = ({ slug }) => {
     return (
       <main className="mainAllReviewsPage">
         <CategoriesInNav>
-          <CategoriesNav slug={slug} />
+          <CategoriesNav slug={slug} description={description} />
         </CategoriesInNav>
         <h2 className="AllReviewsTitle">All Reviews</h2>
         <ReviewSection reviews={reviews} />

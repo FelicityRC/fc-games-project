@@ -42,6 +42,7 @@ const ReviewsByCategory = ({ slug }) => {
         ) : (
           <section>
             <h3 className="CategoryTitle">{category}</h3>
+
             <CategoriesInNav>
               <CategoriesNav slug={slug} />
             </CategoriesInNav>

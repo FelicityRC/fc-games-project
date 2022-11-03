@@ -11,7 +11,7 @@ const CategoriesNav = () => {
     getCategories().then((categories) => {
       setCategories(categories);
       setIsLoading(false);
-    })
+    });
   }, []);
 
   if (isLoading)
@@ -27,13 +27,19 @@ const CategoriesNav = () => {
       <nav className="CategoriesNav">
         {categories.map((category) => {
           return (
-            <Link
-              key={category.slug}
-              className="CategoriesNavButton"
-              to={`/reviews/categories/${category.slug}`}
-            >
-              🎲{category.slug}
-            </Link>
+            <>
+              <Link
+                key={category.slug}
+                className="CategoriesNavButton"
+                to={`/reviews/categories/${category.slug}`}
+              >
+                ➡{category.slug}
+                <p className="CategoriesDescription">
+                  {" "}
+                  🎲 {category.description}
+                </p>
+              </Link>
+            </>
           );
         })}
       </nav>

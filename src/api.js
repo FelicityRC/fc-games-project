@@ -5,9 +5,9 @@ const myApi = axios.create({
 });
 
 export const getBaseURL = (home) => {
-  let path = "/"
-  if (home) path += home
-  console.log(path, "path")
+  let path = "/";
+  if (home) path += home;
+  console.log(path, "path");
   return myApi.get(`${path}`).then((res) => {
     return res.data;
   });
@@ -22,5 +22,11 @@ export const getReviews = (category) => {
 export const getCategories = () => {
   return myApi.get("/categories").then((res) => {
     return res.data.categories;
+  });
+};
+
+export const getReviewById = (review_id) => {
+  return myApi.get(`/reviews/${review_id}`).then((res) => {
+    return res.data.review;
   });
 };

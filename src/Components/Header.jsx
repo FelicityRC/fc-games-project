@@ -1,8 +1,14 @@
 const Header = () => {
   return (
-    <header>
-      <h1 className="Reviewsable">REVIEWSABLE</h1>
-    </header>
+    <>
+      <header>
+        <h1 className="Reviewsable">
+          REVIEWSABLE
+          <div className="Pen">🖋</div>
+          <div className="Dice">🎲</div>
+        </h1>
+      </header>
+    </>
   );
 };
 
