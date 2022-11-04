@@ -3,7 +3,6 @@ import * as api from "../api";
 
 const Votes = ({ review_id, votes }) => {
   const [userVotes, setUserVotes] = useState(0);
-console.log(review_id, votes, "console log")
   const handleUpVotes = () => {
     if (userVotes === 0) {
       setUserVotes(1);

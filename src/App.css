@@ -72,6 +72,11 @@
     padding: 18px;
     border-radius: 40px;
   }
+
+  /* .CommentsContainer {
+    display: flex;
+    flex-wrap: wrap;
+  } */
 }
 
 .Spinner {
@@ -437,10 +442,63 @@ h1 {
   cursor: pointer;
 }
 
-.thumbsUp, .thumbsDown {
+.thumbsUp,
+.thumbsDown {
   border-radius: 10px;
   font-size: 30px;
   border: none;
   margin: 5px;
   padding: 5px;
+}
+
+.CommentsContainer {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto 0 auto;
+}
+
+.Comments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: lightcyan;
+  border-radius: 15px;
+  align-items: center;
+  width: 550px;
+  height: 500px;
+  margin: 30px;
+  padding: 15px;
+  letter-spacing: 1.5px;
+  box-shadow: 15px 15px 15px 15px whitesmoke;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+  font-size: 22px;
+}
+.pVotes {
+  font-style: italic;
+  font-size: 30px;
+}
+
+.pComment {
+  box-shadow: 5px 5px 10px 5px pink;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.Author {
+  font-style: italic;
+}
+
+.CommentButton {
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: darkslategray;
+  background-color: pink;
+  border-radius: 10px;
+  margin: auto;
+  padding: 10px;
+  font-style: italic;
 }

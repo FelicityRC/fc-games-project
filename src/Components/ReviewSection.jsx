@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Votes from "./Votes"
 
 const ReviewSection = (props) => {
   const { reviews } = props;
