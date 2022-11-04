@@ -430,9 +430,17 @@ h1 {
   margin-left: 20px;
   width: 100px;
   border: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 30px;
   color: darkslategray;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.thumbsUp, .thumbsDown {
+  border-radius: 10px;
+  font-size: 30px;
+  border: none;
+  margin: 5px;
+  padding: 5px;
 }
