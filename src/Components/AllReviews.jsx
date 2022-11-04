@@ -23,7 +23,7 @@ const AllReviews = ({ slug, description }) => {
     );
   else {
     return (
-      <main className="mainAllReviewsPage">
+      <main>
         <CategoriesInNav>
           <CategoriesNav slug={slug} description={description} />
         </CategoriesInNav>
