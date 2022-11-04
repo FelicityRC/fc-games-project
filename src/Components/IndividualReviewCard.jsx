@@ -70,13 +70,6 @@ const IndividualReviewCard = () => {
                   Comments: {singleReview.comment_count}
                 </p>
 
-                <Link
-                  key={review_id}
-                  className="CommentButton"
-                  to={`/reviews/${review_id}/comments`}
-                >View Comments
-                </Link>
-
               </section>
               <img
                 className="IndividualReviewImage"

@@ -73,9 +73,10 @@
     border-radius: 40px;
   }
 
-  .CommentsContainer {
-    display: auto;
-  }
+  /* .CommentsContainer {
+    display: flex;
+    flex-wrap: wrap;
+  } */
 }
 
 .Spinner {
