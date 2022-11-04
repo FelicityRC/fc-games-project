@@ -8,6 +8,7 @@ import WelcomePage2 from "./Components/WelcomePage2";
 import AllReviews from "./Components/AllReviews";
 import ReviewsByCategory from "./Components/ReviewsByCategory";
 import IndividualReviewCard from "./Components/IndividualReviewCard";
+import Comments from "./Components/Comments";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             path="/reviews/:review_id"
             element={<IndividualReviewCard />}
           />
+          <Route path="/reviews/:review_id/comments" element={<Comments/>} />
         </Routes>
       </div>
     </BrowserRouter>
