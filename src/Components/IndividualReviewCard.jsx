@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviewById } from "../api";
+import Votes from "./Votes"
 
 const IndividualReviewCard = () => {
   const [singleReview, setSingleReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+ 
 
   const { review_id } = useParams();
-
   useEffect(() => {
     setIsLoading(true);
     getReviewById(review_id).then((singleReview) => {
@@ -53,7 +54,7 @@ const IndividualReviewCard = () => {
             <p style={{ fontStyle: "italic" }}>
               Created: {singleReview.created_at}
             </p>
-            <p style={{ fontStyle: "italic" }}>Votes: {singleReview.votes}</p>
+          <Votes review_id={singleReview.review_id} votes={singleReview.votes}/>
             <p style={{ fontStyle: "italic" }}>
               Comments: {singleReview.comment_count}
             </p>

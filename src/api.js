@@ -7,7 +7,6 @@ const myApi = axios.create({
 export const getBaseURL = (home) => {
   let path = "/";
   if (home) path += home;
-  console.log(path, "path");
   return myApi.get(`${path}`).then((res) => {
     return res.data;
   });
@@ -29,4 +28,10 @@ export const getReviewById = (review_id) => {
   return myApi.get(`/reviews/${review_id}`).then((res) => {
     return res.data.review;
   });
+};
+
+export const patchVotes = (review_id, number) => {
+  return myApi.patch(`/reviews/${review_id}`, {inc_votes: number}).then((res)=>{
+  return res.data.review;
+});
 };
