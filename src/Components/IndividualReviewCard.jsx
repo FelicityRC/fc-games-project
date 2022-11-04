@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviewById } from "../api";
 import Votes from "./Votes";
+import Comments from "./Comments";
 
 const IndividualReviewCard = () => {
   const [singleReview, setSingleReview] = useState({});
@@ -9,7 +10,6 @@ const IndividualReviewCard = () => {
   const [error, setError] = useState(null);
 
   const { review_id } = useParams();
-  console.log(review_id, "in individual review_id")
 
   useEffect(() => {
     setIsLoading(true);
@@ -83,6 +83,7 @@ const IndividualReviewCard = () => {
                 src={singleReview.review_img_url}
                 alt={singleReview.title}
               ></img>
+              <Comments/>
             </span>
           </>
         )}

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const myApi = axios.create({
-  baseURL: "https://nc-games-project5.herokuapp.com/api",
+  baseURL: "http://localhost:9090/api",
 });
 
 export const getBaseURL = (home) => {

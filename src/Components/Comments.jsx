@@ -8,7 +8,6 @@ const Comments = () => {
     const [isLoading, setIsLoading] = useState(true);
     
     const { review_id } = useParams();
-    console.log(review_id, "in comments review_id")
     
   useEffect(() => {
     setIsLoading(true);

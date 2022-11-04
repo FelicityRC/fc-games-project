@@ -72,6 +72,10 @@
     padding: 18px;
     border-radius: 40px;
   }
+
+  .CommentsContainer {
+    display: auto;
+  }
 }
 
 .Spinner {
