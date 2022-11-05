@@ -1,7 +1,9 @@
 import axios from "axios";
 
+//"http://localhost:9090/api"
+
 const myApi = axios.create({
-  baseURL: "http://localhost:9090/api",
+  baseURL: "https://nc-games-project5.herokuapp.com/api",
 });
 
 export const getBaseURL = (home) => {
@@ -43,3 +45,15 @@ export const getComments = (review_id) => {
     return res.data.comments;
   });
 };
+
+export const postCommentByReviewId = (body, review_id, username) => {
+  console.log(body, review_id, username)
+  const newComment = {
+username: username,
+body: body
+  }
+  return myApi.post(`/reviews/${review_id}/comments`, newComment).then((res) => {
+    return res.data.postedComment;
+
+  })
+}
