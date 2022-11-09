@@ -7,10 +7,6 @@
     align-self: center;
   }
 
-  .CategoriesNav {
-    display: auto;
-  }
-
   .CategoriesDescription {
     width: 79.5%;
   }
@@ -40,10 +36,10 @@
   .App {
     display: flex;
   }
-
+  /* 
   .CategoriesDescription {
     width: 79%;
-  }
+  } */
 
   .CategoriesNav {
     display: inline;
@@ -52,14 +48,10 @@
     margin-left: 10px;
   }
 
-  .CategoriesNavButton {
-    text-align: center;
-  }
-
-  .CategoryTitle {
+  /* .CategoryTitle {
     margin: 50%;
     align-self: center;
-  }
+  } */
 
   .IndividualReview {
     padding: 15px;
@@ -117,6 +109,7 @@
 
 html {
   margin: 0px;
+  display: auto;
 }
 
 header {
@@ -165,7 +158,7 @@ h1 {
 .WelcomePage {
   margin: 0 auto 0 auto;
   padding: 20px;
-  padding-bottom: 0px;
+  margin-bottom: 5px;
   border-radius: 40px;
   background-color: floralwhite;
   color: black;
@@ -280,22 +273,6 @@ h1 {
 .CategoriesNav {
   display: auto;
   list-style-type: none;
-}
-
-.CategoriesOpenClosed {
-  display: auto;
-  background-color: lightpink;
-  border-radius: 10px;
-  letter-spacing: 3px;
-  border: none;
-  padding: 15px;
-  margin: 5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 35px;
-  width: 500px;
-  cursor: grab;
-  text-align: left;
-  margin: 0px;
 }
 
 .CloseButtonInList {

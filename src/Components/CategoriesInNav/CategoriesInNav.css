@@ -1,0 +1,43 @@
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+  .CategoriesNav {
+    display: inline;
+    text-align: center;
+    margin-left: 10px;
+  }
+  .Navigation {
+    display: flex;
+    flex: 1;
+    background-color: pink;
+    width: 100%;
+  }
+}
+
+.CategoriesOpenClosed {
+  flex: 1;
+  background-color: pink;
+  border: none;
+  height: 45px;
+  margin: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 3px;
+  cursor: grab;
+}
+.Navigation {
+  display: flex;
+  flex: 1;
+  background-color: pink;
+}
+
+.Modifier {
+  flex: 1;
+  padding-top: 5px;
+  text-decoration: none;
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 3px;
+  cursor: grab;
+}

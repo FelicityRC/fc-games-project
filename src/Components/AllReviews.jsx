@@ -1,20 +1,35 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { getReviews } from "../api";
-import CategoriesInNav from "./CategoriesInNav";
-import CategoriesNav from "./CategoriesNav";
+import CategoriesInNav from "./CategoriesInNav/CategoriesInNav";
 import ReviewSection from "./ReviewSection";
 
-const AllReviews = ({ slug, description }) => {
+const AllReviews = () => {
+  const search = useLocation().search;
+
+  const searchParams = new URLSearchParams(search);
+
+  const currentCategoryQuery = searchParams.get("category");
+  const currentSortByQuery = searchParams.get("sort_by");
+  const currentOrderQuery = searchParams.get("order");
+
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
-    getReviews().then((reviews) => {
-      setReviews(reviews);
-      setIsLoading(false);
-    });
-  }, []);
+    getReviews(currentCategoryQuery, currentSortByQuery, currentOrderQuery)
+      .then((reviews) => {
+        setReviews(reviews);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError("404: Page Not Found");
+        setIsLoading(false);
+      });
+  }, [currentCategoryQuery, currentSortByQuery, currentOrderQuery]);
+
   if (isLoading)
     return (
       <h3 className="LoadingMsg">
@@ -22,12 +37,16 @@ const AllReviews = ({ slug, description }) => {
       </h3>
     );
   else {
+    const title = currentCategoryQuery || "AllReviews";
     return (
       <main>
-        <CategoriesInNav>
-          <CategoriesNav slug={slug} description={description} />
-        </CategoriesInNav>
-        <h2 className="AllReviewsTitle">All Reviews</h2>
+        {error && <p className="errorMsg">{error}</p>}
+        <CategoriesInNav
+          currentCategoryQuery={currentCategoryQuery}
+          currentOrderQuery={currentOrderQuery}
+          currentSortByQuery={currentSortByQuery}
+        />
+        <h2 className="AllReviewsTitle">{title}</h2>
         <ReviewSection reviews={reviews} />
       </main>
     );
