@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// "http://localhost:9090/api"
-// "https://nc-games-project5.herokuapp.com/api"
+//"http://localhost:9090/api"
+//"https://nc-games-project5.herokuapp.com/api"
 
 const myApi = axios.create({
   baseURL: "https://fair-plum-dog-sari.cyclic.app/api",
