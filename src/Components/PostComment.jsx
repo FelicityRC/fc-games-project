@@ -22,14 +22,25 @@ const PostComment = ({ setComments }) => {
   };
 
   return (
-    <fieldset>
-      Post a Comment
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="comment">Comment: </label>
-        <input onChange={handleChange} id="comment" type="text" />
-        <button type="submit">Submit</button>
-      </form>
-    </fieldset>
+    <>
+      <section className="PostCommentBox">
+        <form className="TextField" onSubmit={handleSubmit}>
+          <p className="PostCommentText">Post a Comment ⤦</p>
+          <label htmlFor="comment"></label>
+          <input
+            placeholder=" Leave your thoughts here..."
+            className="InputComment"
+            onChange={handleChange}
+            id="comment"
+            type="text"
+          />
+          <button className="SubmitComment" type="submit">
+            Submit
+          </button>
+        </form>
+      </section>
+      <p className="CommentsHeading">COMMENTS</p>
+    </>
   );
 };
 

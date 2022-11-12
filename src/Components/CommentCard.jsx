@@ -1,11 +1,10 @@
 const CommentCard = ({ comment_id, author, body, votes, created_at }) => {
- 
   return (
     <li className="Comments" key={comment_id}>
-      <h3 className="Author">Author: {author}</h3>
-      <p className="pComment">{body}</p>
-      <p className="pVotes">Votes: {votes}</p>
-      <p>Created: {created_at}</p>
+      <h3>User: {author}</h3>
+      <p className="CommentBody">{body}</p>
+      <br></br>
+      <p>Date Posted: {created_at.slice(0, 10)}</p>
     </li>
   );
 };

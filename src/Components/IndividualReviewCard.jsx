@@ -40,7 +40,9 @@ const IndividualReviewCard = () => {
         ) : (
           <>
             <Link key={review_id} to={"/reviews"}>
-              <button className="BackButton">back</button>
+              <button className="BackButton">
+                BACK TO <br></br>ALL REVIEWS
+              </button>
             </Link>
             <span className="IndividualReviewAndImage">
               <section
@@ -48,35 +50,38 @@ const IndividualReviewCard = () => {
                 style={{ textAlign: "center" }}
               >
                 <h3 style={{ fontSize: "30px" }}>{singleReview.title}</h3>
-                <p>Review: {singleReview.review_body}</p>
-                <br></br>
                 <p style={{ fontStyle: "italic" }}>
                   Category: {singleReview.category}
                 </p>
                 <p style={{ fontStyle: "italic" }}>
-                  Owner: {singleReview.owner}
+                  Posted: {singleReview.created_at.slice(0, 10)}
+                </p>
+                <p>
+                  Review:<br></br>
+                  <br></br> {singleReview.review_body}
+                </p>
+                <br></br>
+                <p style={{ fontStyle: "italic" }}>
+                  User: {singleReview.owner}
                 </p>
                 <p style={{ fontStyle: "italic" }}>
                   Designer: {singleReview.designer}
                 </p>
                 <p style={{ fontStyle: "italic" }}>
-                  Created: {singleReview.created_at}
+                  Comments: {singleReview.comment_count}
                 </p>
                 <Votes
                   review_id={singleReview.review_id}
                   votes={singleReview.votes}
                 />
-                <p style={{ fontStyle: "italic" }}>
-                  Comments: {singleReview.comment_count}
-                </p>
 
+                <img
+                  className="IndividualReviewImage"
+                  src={singleReview.review_img_url}
+                  alt={singleReview.title}
+                ></img>
               </section>
-              <img
-                className="IndividualReviewImage"
-                src={singleReview.review_img_url}
-                alt={singleReview.title}
-              ></img>
-              <Comments/>
+              <Comments />
             </span>
           </>
         )}

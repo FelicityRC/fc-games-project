@@ -14,6 +14,7 @@ const ReviewSection = (props) => {
           >
             <h3 style={{ marginTop: 10 }}>{review.title}</h3>
             <p>Category: {review.category}</p>
+            <p>Posted: {review.created_at.slice(0, 10)}</p>
             <img
               className="ReviewsImages"
               src={review.review_img_url}
@@ -21,8 +22,10 @@ const ReviewSection = (props) => {
               height="130"
               alt={review.title}
             ></img>
-            <p>Votes: {review.votes}</p>
+            <p>User: {review.owner}</p>
+            <p>Designer: {review.designer}</p>
             <p>Comments: {review.comment_count}</p>
+            <p>Votes: {review.votes}</p>
             <Link key={review.review_id} to={`/reviews/${review.review_id}`}>
               <button className="ViewButton">View</button>
             </Link>

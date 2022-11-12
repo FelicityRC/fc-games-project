@@ -1,18 +1,48 @@
 @media only screen and (min-width: 300px) and (max-width: 768px) {
   .CategoriesNav {
-    display: inline;
-    text-align: center;
-    margin-left: 10px;
+    display: auto;
+    list-style-type: none;
   }
   .Navigation {
-    display: flex;
+    display: auto;
     flex: 1;
     background-color: pink;
-    width: 100%;
+  }
+  .NavBar {
+    width: 540px;
+  }
+  .SortByList {
+    background-color: whitesmoke;
+    color: darkslategrey;
+    border-radius: 10px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    width: 200px;
+    margin-left: 230px;
+  }
+
+  .OrderByList {
+    background-color: whitesmoke;
+    color: darkslategrey;
+    border-radius: 10px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    width: 120px;
+    margin-left: 390px;
   }
 }
 
-.CategoriesOpenClosed {
+.CategoriesNav {
+  display: auto;
+  list-style-type: none;
+  margin: auto;
+}
+
+.NavHeadings {
   flex: 1;
   background-color: pink;
   border: none;
@@ -27,17 +57,32 @@
 .Navigation {
   display: flex;
   flex: 1;
-  background-color: pink;
 }
 
-.Modifier {
-  flex: 1;
-  padding-top: 5px;
-  text-decoration: none;
-  color: black;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 30px;
-  text-align: left;
-  letter-spacing: 3px;
-  cursor: grab;
+@media only screen and (min-width: 768px) {
+  .SortByList {
+    background-color: whitesmoke;
+    color: darkslategrey;
+    border-radius: 10px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 600px;
+    margin-top: 0px;
+    width: 180px;
+  }
+
+  .OrderByList {
+    background-color: whitesmoke;
+    color: darkslategrey;
+    border-radius: 10px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 1150px;
+    margin-top: 0px;
+    width: 150px;
+  }
 }

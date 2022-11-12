@@ -3,14 +3,7 @@ import { useNavigate } from "react-router-dom";
 import CategoriesNav from "../CategoriesNav";
 import "./CategoriesInNav.css";
 
-const sortByQueries = [
-  "title",
-  "designer",
-  "owner",
-  "category",
-  "created_at",
-  "votes",
-];
+const sortByQueries = ["created_at", "designer", "owner", "title", "votes"];
 
 const orderByQueries = ["asc", "desc"];
 
@@ -40,7 +33,7 @@ const CategoriesInNav = ({
     navigate(newLocationPath);
   };
 
-  const handleOrderClick = (event) => {
+  const handleOrderByClick = (event) => {
     event.preventDefault();
     const selectedOrderByQuery = event.target.innerText;
 
@@ -58,64 +51,65 @@ const CategoriesInNav = ({
 
   return (
     <>
-      <div className="CloseButtonInList">
+      <section className="NavBar">
         <div className="Navigation">
           <button
-            className="CategoriesOpenClosed"
+            className="NavHeadings"
             onClick={() => {
               setShowCategories(!showCategories);
             }}
           >
-            {showCategories ? "Categories" : "Categories"}
+            {showCategories ? "➖Categories" : "➕Categories"}
           </button>
           <button
-            className="Modifier"
+            className="NavHeadings"
             onClick={() => {
               setShowSortOptions(!showSortOptions);
             }}
           >
-            Sort By
+            {showSortOptions ? "➖Sort" : "➕Sort"}
           </button>
           <button
-            className="Modifier"
+            className="NavHeadings"
             onClick={() => {
               setShowOrderOptions(!showOrderOptions);
             }}
           >
-            Order
+            {showOrderOptions ? "➖Order" : "➕Order"}
           </button>
-
-          {showCategories && (
-            <CategoriesNav
-              currentSortByQuery={currentSortByQuery}
-              currentOrderByQuery={currentOrderByQuery}
-            />
-          )}
-
-          {showSortOptions && (
-            <ul className="CategoriesNav">
-              {sortByQueries.map((query) => {
-                return (
-                  <p key={query} onClick={handleSortByClick}>
-                    {query}
-                  </p>
-                );
-              })}
-            </ul>
-          )}
-
-          {showOrderOptions && (
-            <ul className="CategoriesNav">
-              {orderByQueries.map((query) => {
-                return (
-                  <p key={query} onClick={handleOrderClick}>
-                    {query}
-                  </p>
-                );
-              })}
-            </ul>
-          )}
         </div>
+      </section>
+      {showCategories && (
+        <CategoriesNav
+          currentSortByQuery={currentSortByQuery}
+          currentOrderByQuery={currentOrderByQuery}
+        />
+      )}
+      <div className="SortByList">
+        {showSortOptions && (
+          <ul className="CategoriesNav">
+            {sortByQueries.map((query) => {
+              return (
+                <p key={query} onClick={handleSortByClick}>
+                  {query}
+                </p>
+              );
+            })}
+          </ul>
+        )}
+      </div>
+      <div className="OrderByList">
+        {showOrderOptions && (
+          <ul className="CategoriesNav">
+            {orderByQueries.map((query) => {
+              return (
+                <p key={query} onClick={handleOrderByClick}>
+                  {query}
+                </p>
+              );
+            })}
+          </ul>
+        )}
       </div>
     </>
   );
