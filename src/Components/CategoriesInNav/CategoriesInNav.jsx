@@ -4,7 +4,6 @@ import CategoriesNav from "../CategoriesNav";
 import "./CategoriesInNav.css";
 
 const sortByQueries = [
-  "review_id",
   "title",
   "designer",
   "owner",
@@ -13,11 +12,11 @@ const sortByQueries = [
   "votes",
 ];
 
-const orderQueries = ["asc", "desc"];
+const orderByQueries = ["asc", "desc"];
 
 const CategoriesInNav = ({
   currentCategoryQuery,
-  currentOrderQuery,
+  currentOrderByQuery,
   currentSortByQuery,
 }) => {
   const [showCategories, setShowCategories] = useState(false);
@@ -34,8 +33,8 @@ const CategoriesInNav = ({
     if (currentCategoryQuery) {
       newLocationPath += `&category=${currentCategoryQuery}`;
     }
-    if (currentOrderQuery) {
-      newLocationPath += `&order=${currentOrderQuery}`;
+    if (currentOrderByQuery) {
+      newLocationPath += `&order_by=${currentOrderByQuery}`;
     }
 
     navigate(newLocationPath);
@@ -43,9 +42,9 @@ const CategoriesInNav = ({
 
   const handleOrderClick = (event) => {
     event.preventDefault();
-    const selectedOrderQuery = event.target.innerText;
+    const selectedOrderByQuery = event.target.innerText;
 
-    let newLocationPath = `/reviews?order=${selectedOrderQuery}`;
+    let newLocationPath = `/reviews?order_by=${selectedOrderByQuery}`;
 
     if (currentCategoryQuery) {
       newLocationPath += `&category=${currentCategoryQuery}`;
@@ -58,57 +57,67 @@ const CategoriesInNav = ({
   };
 
   return (
-    <div className="CloseButtonInList">
-      <div className="Navigation">
-        <button
-          className="CategoriesOpenClosed"
-          onClick={() => {
-            setShowCategories(!showCategories);
-          }}
-        >
-          {showCategories ? "Categories" : "Categories"}
-        </button>
-        <button
-          className="Modifier"
-          onClick={() => {
-            setShowSortOptions(!showSortOptions);
-          }}
-        >
-          Sort By
-        </button>
-        <button
-          className="Modifier"
-          onClick={() => {
-            setShowOrderOptions(!showOrderOptions);
-          }}
-        >
-          Order
-        </button>
+    <>
+      <div className="CloseButtonInList">
+        <div className="Navigation">
+          <button
+            className="CategoriesOpenClosed"
+            onClick={() => {
+              setShowCategories(!showCategories);
+            }}
+          >
+            {showCategories ? "Categories" : "Categories"}
+          </button>
+          <button
+            className="Modifier"
+            onClick={() => {
+              setShowSortOptions(!showSortOptions);
+            }}
+          >
+            Sort By
+          </button>
+          <button
+            className="Modifier"
+            onClick={() => {
+              setShowOrderOptions(!showOrderOptions);
+            }}
+          >
+            Order
+          </button>
 
-        {showCategories && (
-          <CategoriesNav
-            currentSortByQuery={currentSortByQuery}
-            currentOrderQuery={currentOrderQuery}
-          />
-        )}
+          {showCategories && (
+            <CategoriesNav
+              currentSortByQuery={currentSortByQuery}
+              currentOrderByQuery={currentOrderByQuery}
+            />
+          )}
 
-        {showSortOptions && (
-          <ul>
-            {sortByQueries.map((query) => {
-              return <p onClick={handleSortByClick}>{query}</p>;
-            })}
-          </ul>
-        )}
+          {showSortOptions && (
+            <ul className="CategoriesNav">
+              {sortByQueries.map((query) => {
+                return (
+                  <p key={query} onClick={handleSortByClick}>
+                    {query}
+                  </p>
+                );
+              })}
+            </ul>
+          )}
 
-        {showOrderOptions && (
-          <ul>
-            {orderQueries.map((query) => {
-              return <p onClick={handleOrderClick}>{query}</p>;
-            })}
-          </ul>
-        )}
+          {showOrderOptions && (
+            <ul className="CategoriesNav">
+              {orderByQueries.map((query) => {
+                return (
+                  <p key={query} onClick={handleOrderClick}>
+                    {query}
+                  </p>
+                );
+              })}
+            </ul>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

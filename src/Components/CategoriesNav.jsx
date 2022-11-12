@@ -5,7 +5,7 @@ import { getCategories } from "../api";
 const CategoriesNav = (props) => {
   const [categories, setCategories] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const { currentSortByQuery, currentOrderQuery } = props;
+  const { currentSortByQuery, currentOrderByQuery } = props;
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,8 +27,8 @@ const CategoriesNav = (props) => {
       {categories.map((category) => {
         let newLocationPath = `/reviews?category=${category.slug}`;
 
-        if (currentOrderQuery) {
-          newLocationPath += `&order=${currentOrderQuery}`;
+        if (currentOrderByQuery) {
+          newLocationPath += `&order=${currentOrderByQuery}`;
         }
         if (currentSortByQuery) {
           newLocationPath += `&sort_by=${currentSortByQuery}`;

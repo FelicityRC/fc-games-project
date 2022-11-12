@@ -14,10 +14,9 @@ export const getBaseURL = (home) => {
   });
 };
 
-export const getReviews = (category, sort_by, order) => {
-  // Expand the params to add in orderBy, sortBy
+export const getReviews = (category, sort_by, order_by) => {
   return myApi
-    .get("/reviews", { params: { category, sort_by, order } })
+    .get("/reviews", { params: { category, sort_by, order_by } })
     .then((res) => {
       return res.data.reviews;
     });
@@ -50,7 +49,6 @@ export const getComments = (review_id) => {
 };
 
 export const postCommentByReviewId = (body, review_id, username) => {
-  console.log(body, review_id, username);
   const newComment = {
     username: username,
     body: body,

@@ -11,7 +11,7 @@ const AllReviews = () => {
 
   const currentCategoryQuery = searchParams.get("category");
   const currentSortByQuery = searchParams.get("sort_by");
-  const currentOrderQuery = searchParams.get("order");
+  const currentOrderByQuery = searchParams.get("order");
 
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +19,7 @@ const AllReviews = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getReviews(currentCategoryQuery, currentSortByQuery, currentOrderQuery)
+    getReviews(currentCategoryQuery, currentSortByQuery, currentOrderByQuery)
       .then((reviews) => {
         setReviews(reviews);
         setIsLoading(false);
@@ -28,7 +28,7 @@ const AllReviews = () => {
         setError("404: Page Not Found");
         setIsLoading(false);
       });
-  }, [currentCategoryQuery, currentSortByQuery, currentOrderQuery]);
+  }, [currentCategoryQuery, currentSortByQuery, currentOrderByQuery]);
 
   if (isLoading)
     return (
@@ -37,13 +37,13 @@ const AllReviews = () => {
       </h3>
     );
   else {
-    const title = currentCategoryQuery || "AllReviews";
+    const title = currentCategoryQuery || "All Reviews";
     return (
       <main>
         {error && <p className="errorMsg">{error}</p>}
         <CategoriesInNav
           currentCategoryQuery={currentCategoryQuery}
-          currentOrderQuery={currentOrderQuery}
+          currentOrderByQuery={currentOrderByQuery}
           currentSortByQuery={currentSortByQuery}
         />
         <h2 className="AllReviewsTitle">{title}</h2>
