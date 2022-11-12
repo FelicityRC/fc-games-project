@@ -1,7 +1,10 @@
 @media (min-width: 300px) and (max-width: 768px) {
   .App {
     display: flex;
-    /* width: 540px; */
+    width: 550px;
+  }
+  .NavBar {
+    width: 600px;
   }
 
   .Navigation {
