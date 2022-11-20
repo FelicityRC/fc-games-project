@@ -27,18 +27,22 @@ const PostComment = ({ setComments }) => {
         <form className="TextField" onSubmit={handleSubmit}>
           <p className="PostCommentText">Post a Comment ⤦</p>
           <label htmlFor="comment"></label>
-          <input
-            placeholder=" Leave your thoughts here..."
+          <textarea
+            placeholder=" Leave your thoughts here... "
             className="InputComment"
-            onChange={handleChange}
+            name="comment"
             id="comment"
-            type="text"
-          />
+            onChange={handleChange}
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
           <button className="SubmitComment" type="submit">
             Submit
           </button>
         </form>
       </section>
+      <br></br>
       <p className="CommentsHeading">COMMENTS</p>
     </>
   );
