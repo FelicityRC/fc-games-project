@@ -18,11 +18,9 @@ const ReviewSection = (props) => {
             <img
               className="ReviewsImages"
               src={review.review_img_url}
-              width="170"
-              height="130"
               alt={review.title}
             ></img>
-            <p>User: {review.owner}</p>
+            <p>Owner: {review.owner}</p>
             <p>Designer: {review.designer}</p>
             <p>Comments: {review.comment_count}</p>
             <p>Votes: {review.votes}</p>

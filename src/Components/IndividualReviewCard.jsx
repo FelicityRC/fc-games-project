@@ -62,7 +62,7 @@ const IndividualReviewCard = () => {
                 </p>
                 <br></br>
                 <p style={{ fontStyle: "italic" }}>
-                  User: {singleReview.owner}
+                  Owner: {singleReview.owner}
                 </p>
                 <p style={{ fontStyle: "italic" }}>
                   Designer: {singleReview.designer}

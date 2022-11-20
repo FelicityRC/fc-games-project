@@ -67,7 +67,7 @@ const CategoriesInNav = ({
               setShowSortOptions(!showSortOptions);
             }}
           >
-            {showSortOptions ? "➖Sort" : "➕Sort"}
+            {showSortOptions ? "➖Sort By" : "➕Sort By"}
           </button>
           <button
             className="NavHeadings"
@@ -90,7 +90,11 @@ const CategoriesInNav = ({
           <ul className="CategoriesNav">
             {sortByQueries.map((query) => {
               return (
-                <p key={query} onClick={handleSortByClick}>
+                <p
+                  className="QueriesMapped"
+                  key={query}
+                  onClick={handleSortByClick}
+                >
                   {query}
                 </p>
               );
@@ -103,7 +107,11 @@ const CategoriesInNav = ({
           <ul className="CategoriesNav">
             {orderByQueries.map((query) => {
               return (
-                <p key={query} onClick={handleOrderByClick}>
+                <p
+                  className="QueriesMapped"
+                  key={query}
+                  onClick={handleOrderByClick}
+                >
                   {query}
                 </p>
               );

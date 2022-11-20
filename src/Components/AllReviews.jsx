@@ -11,7 +11,7 @@ const AllReviews = () => {
 
   const currentCategoryQuery = searchParams.get("category");
   const currentSortByQuery = searchParams.get("sort_by");
-  const currentOrderByQuery = searchParams.get("order");
+  const currentOrderByQuery = searchParams.get("order_by");
 
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

@@ -1,6 +1,7 @@
 @media only screen and (min-width: 300px) and (max-width: 768px) {
   .CategoriesNav {
     display: auto;
+    flex-wrap: wrap;
     list-style-type: none;
   }
   .Navigation {
@@ -9,8 +10,19 @@
     background-color: pink;
   }
   .NavBar {
-    width: 540px;
+    width: 103%;
   }
+  .NavHeadings:hover {
+    background-color: #ffffff80;
+  }
+
+  .QueriesMapped:hover {
+    background-color: pink;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 0px;
+  }
+
   .SortByList {
     background-color: whitesmoke;
     color: darkslategrey;
@@ -20,7 +32,7 @@
     font-size: 20px;
     cursor: pointer;
     width: 200px;
-    margin-left: 230px;
+    margin-left: 260px;
   }
 
   .OrderByList {
@@ -31,15 +43,15 @@
       sans-serif;
     font-size: 20px;
     cursor: pointer;
-    width: 120px;
-    margin-left: 390px;
+    width: 100px;
+    margin-left: 420px;
   }
 }
 
 .CategoriesNav {
   display: auto;
   list-style-type: none;
-  margin: auto;
+  margin-left: 0px;
 }
 
 .NavHeadings {
@@ -54,12 +66,28 @@
   letter-spacing: 3px;
   cursor: grab;
 }
+
 .Navigation {
   display: flex;
   flex: 1;
 }
 
 @media only screen and (min-width: 768px) {
+  .Navigation {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .NavHeadings:hover {
+    background-color: #ffffff60;
+  }
+
+  .QueriesMapped:hover {
+    background-color: pink;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 0px;
+  }
   .SortByList {
     background-color: whitesmoke;
     color: darkslategrey;

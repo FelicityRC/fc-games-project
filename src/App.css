@@ -17,7 +17,6 @@
   }
 
   .IndividualReview {
-    width: 460px;
     height: auto;
     display: block;
     flex-wrap: wrap;
@@ -26,6 +25,8 @@
     border-radius: 20px;
   }
   .IndividualReviewImage {
+    display: flex;
+    flex-wrap: wrap;
     width: 400px;
     height: 300px;
     padding: 18px;
@@ -34,7 +35,7 @@
 
   .CommentsContainer {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 }
 
@@ -48,7 +49,7 @@
   }
 
   .IndividualReview {
-    width: 700px;
+    height: 1100px;
     float: left;
     padding: 20px;
     padding-bottom: 30px;
@@ -57,15 +58,22 @@
   }
 
   .IndividualReviewImage {
-    width: 600px;
-    height: 480px;
+    width: 500px;
+    height: 340px;
     border-radius: 20px;
+    margin-top: 10px;
   }
   .IndividualReviewAndImage {
-    display: inline-block;
+    display: flex;
+    flex-wrap: nowrap;
     margin-top: 0px;
     padding: 100px;
     padding-top: 10px;
+  }
+  .CommentsHeading {
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
   }
 }
 
@@ -154,7 +162,7 @@ h1 {
 
 .WelcomePage {
   margin: 0 auto 0 auto;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 5px;
   border-radius: 40px;
   background-color: floralwhite;
@@ -171,6 +179,7 @@ h1 {
   display: flex;
   padding: 10px;
   margin: 5px;
+  margin-bottom: 10px;
   border: 2px solid darkslategrey;
   border-radius: 40px;
   font-style: italic;
@@ -206,7 +215,7 @@ h1 {
   background-color: whitesmoke;
   border-radius: 15px;
   width: 350px;
-  height: 500px;
+  height: 520px;
   margin: 5px;
   margin-bottom: 30px;
   padding: 5px;
@@ -236,6 +245,11 @@ h1 {
   padding: 2px;
   margin: 5px;
   cursor: pointer;
+}
+.ViewButton:hover {
+  background-color: pink;
+  color: white;
+  border: white;
 }
 
 .CategoriesNavButton {
@@ -308,6 +322,12 @@ h1 {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
+.ReviewsImages {
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+}
+
 @keyframes shake {
   0% {
     transform: translate(1px, 1px) rotate(0deg);
@@ -416,6 +436,7 @@ h1 {
   border: none;
   margin: 5px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .CommentsContainer {
