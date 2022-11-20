@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import * as moment from "moment";
 
 const ReviewSection = (props) => {
   const { reviews } = props;
@@ -14,7 +15,7 @@ const ReviewSection = (props) => {
           >
             <h3 style={{ marginTop: 10 }}>{review.title}</h3>
             <p>Category: {review.category}</p>
-            <p>Posted: {review.created_at.slice(0, 10)}</p>
+            <p>Posted: {moment(review.created_at).format("DD/MM/YYYY")}</p>
             <img
               className="ReviewsImages"
               src={review.review_img_url}

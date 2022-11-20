@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getReviewById } from "../api";
+import * as moment from "moment";
 import Votes from "./Votes";
 import Comments from "./Comments";
 
@@ -54,7 +55,7 @@ const IndividualReviewCard = () => {
                   Category: {singleReview.category}
                 </p>
                 <p style={{ fontStyle: "italic" }}>
-                  Posted: {singleReview.created_at.slice(0, 10)}
+                  Posted:{moment(singleReview.created_at).format("DD/MM/YYYY")}
                 </p>
                 <p>
                   Review:<br></br>
