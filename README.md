@@ -1,4 +1,4 @@
-# Northcoders Games Reviews Site
+# Northcoders Games Reviews Project
 
 ## Description
 
