@@ -14,10 +14,6 @@ Backend Repo:
 
 * https://github.com/FelicityRC/fc-games-project-be
 
-## Requirements
-
-* Node v18.9.0
-
 ## To Run Locally
 
 * fork this repo
@@ -29,3 +25,7 @@ Backend Repo:
 * npm install
 
 * npm start
+
+## Minimum Requirements
+
+* Node v18.9
