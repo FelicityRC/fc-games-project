@@ -2,10 +2,9 @@
 
 ## Description
 
-This project was to build a website using my backend RESTful API Design with MVC Architecture, Express and Node.js that I built previously. 
+This project was to build a website using React, application design, planning, optimistic rendering.
 
-Front end was built using React, Application
- Design, Planning and Optimistic Rendering.
+It consumes my backend RESTful API Design with MVC Architecture, Express and Node.js that I built previously. 
 
 Live Build:
 
